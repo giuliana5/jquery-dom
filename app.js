@@ -28,3 +28,21 @@ $("input").on("change", function() {
 $("img").on("click",function() {
   this.remove();
 })
+
+//part two
+$("form").submit(function(e) {
+  e.preventDefault();
+  let movie = $("#movie-title").val();
+  let rating = $("#rating").val();
+
+
+  const newDiv = $("#container").append("<div></div>")
+
+  newDiv.append(`<p>${movie} --- ${rating} / 10</p>`).addClass("movies")
+
+  newDiv.append("<button>X</button>").addClass("remove").on("click", function() {
+    console.log(this)
+    $(this).remove();
+  });
+
+})
